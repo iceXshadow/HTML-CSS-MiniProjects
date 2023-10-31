@@ -1,0 +1,275 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Figtree';
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #171717;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li a.active::before {
+    position: absolute;
+    content: '';
+    border-bottom: 2px solid #171717;
+    width: 35%;
+    height: 1px;
+    bottom: -6px;
+}
+
+nav ul li a::before {
+    position: absolute;
+    content: '';
+    border-bottom: 2px solid #a9a7a7;
+    width: 0%;
+    height: 1px;
+    bottom: -6px;
+    transition: width 0.3s;
+}
+
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+.right-col {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 5.2rem;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+
+.subhead {
+    font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;
+}
+
+.cta-btns, .two-cta {
+    display: flex;
+    gap: 2em;
+}
+
+.one-cta {
+    background-color: #f1e2d1;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #171717;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+
+.two-cta {
+    font-size: 1.8rem;
+    color: #171717;
+    text-decoration: none;
+    display: block;
+    padding: 1em 0;
+    align-items: center;
+}
+
+.two-cta svg {
+    width: 20px;
+    transition: transform 0.3s;
+}
+
+.news {
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    margin-bottom: 2em;
+    border: 1px solid #171717;
+    border-radius: 0.8em;
+    position: relative;
+}
+
+.news::before {
+    position: absolute;
+    content: '';
+    background: url('../images/confetti.svg');
+    height: 100px;
+    width: 100px;
+    top: -20px;
+    left: -20px;
+    z-index: 2;
+}
+
+p.emp {
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: 200;
+    line-height: 100%;
+}
+
+p.details {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas: 
+        "left ."
+        "left .";
+}
+
+.card {
+    border-radius: 1.8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 180%;
+    background-repeat: no-repeat;
+    transition: background-size 800ms;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url('./images/clothing1.jpg');
+    position: relative;
+}
+
+.card1::before {
+    position: absolute;
+    content: '';
+    background: url('./images/tag.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    top: 20px;
+    left: -30px;
+    pointer-events: none;
+}
+
+.card2 {
+    background-image: url('./images/clothing2.jpg');
+}
+.card3 {
+    background-image: url('./images/clothing3.jpg');
+}
+
+.card-details {
+    background: white;
+    border-radius: 1em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 800ms;
+}
+
+.card-details a {
+    color: #171717;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.card-details p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p.prod-price {
+    font-size: 1.8rem;
+}
+
+nav ul li a:hover::before {
+    width: 35%;
+}
+
+.one-cta:hover {
+    background: #e2d1bd;
+}
+
+.two-cta:hover svg {
+    transform: translateX(10px);
+}
+
+.two-cta:hover {
+    text-decoration: underline;
+}
+
+.card:hover {
+    background-size: 210%;
+}
+
+.card:hover .card-details {
+    transform: translateY(-20px);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    height: 100%;
+    width: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from {
+        transform: scaleY(1);
+    } to {
+        transform: scaleY(0);
+    }
+}
+
+main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
